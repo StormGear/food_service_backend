@@ -164,4 +164,26 @@ router.get('/api/menuitems/:menuitem_id', menuItem.getMenuItemByMenuItemId);
  */
 router.post('/api/menuitems/create-menuitem', menuItem.createMenuItem);
 
+
+/**
+ * @swagger
+ * /menuitems/{menuitem_id}:
+ *   delete:
+ *     tags: [Menu Item Management]
+ *     description: Delete a menuitem given its menuitem_id
+ *     summary: Delete a menuitem by menuitem_id
+ *     parameters:
+ *       - in: path
+ *         name: menuitem_id
+ *         required: true
+ *     responses:
+ *       200:
+ *          description: Menuitem deleted successfully
+ *       404:
+ *         description: Menuitem not found
+ *       400:
+ *          description: menuitem_id is required
+ */
+router.delete('/api/menuitems/:menuitem_id', menuItem.deleteMenuItemByMenuItemId);
+
 module.exports = router;

@@ -31,6 +31,30 @@ const getMenuItemByMenuItemId = (req, res) => {
     })
 }
 
+const deleteMenuItemByMenuItemId = (req, res) => {
+    const menuitem_id = req.params.menuitem_id;
+
+    if (!menuitem_id) {
+        return res.status(400).json({ message: "Menuitem id is required" });
+    }
+
+    const query = 'DELETE FROM public.menuitem WHERE menuitem_id = $1 RETURNING *';
+    menuItemClient.query(query, [menuitem_id], (err, results) => {
+        try {
+            if (err) throw err;
+            if (results.rowCount === 0) {
+                return res.status(404).json({ message: "Menuitem not found" });
+            }
+            res.status(200).json({ message: "Menuitem deleted successfully" });
+        } catch (err) {
+            res.status(500).json({ error: err.message });
+        }
+    });
+}
+
+
+
+
 const createMenuItem = (req, res) => {
     const { price, name, nutritional_info, extra_toppings, image_url } = req.body;
     
@@ -55,5 +79,6 @@ const createMenuItem = (req, res) => {
 module.exports = {
     getAllMenuItems,
     getMenuItemByMenuItemId,
-    createMenuItem
+    createMenuItem,
+    deleteMenuItemByMenuItemId
 }

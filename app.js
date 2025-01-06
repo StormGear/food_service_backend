@@ -17,8 +17,12 @@ const options = {
     },
     servers: [
       {
-        url: 'https://food-service-d1ed0096c526.herokuapp.com/api',
+        url: 'https://food-service-backend-n60w.onrender.com/api',
         description: 'Production server',
+      },
+      {
+        url: 'https://food-service-d1ed0096c526.herokuapp.com/api',
+        description: 'Production server (out of service)',
     },
       {
         url: 'http://localhost:3000/api',

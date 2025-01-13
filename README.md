@@ -121,10 +121,10 @@ For more information on how to use Swagger, visit the [Swagger Documentation](ht
 
 ### Backend
 
-Deployed on Heroku:
+Deployed on Heroku (later on render due to costs):
 
 
-[Backend URL](https://food-service-d1ed0096c526.herokuapp.com/api-docs/)
+[Backend URL](https://food-service-backend-n60w.onrender.com/api-docs/)
 
 
 ## Contributing
@@ -143,5 +143,5 @@ Contributions are welcome! Please follow these steps:
 
 For questions or feedback, please reach out at:
 
-- Email: [papakofiboahen@gmail.com](mailto\:your-email@example.com)
+- Email: [papakofiboahen@gmail.com](mailto\:papakofiboahen@gmail.com)
 - GitHub: [StormGear](https://github.com/StormGear)
